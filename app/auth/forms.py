@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 from flask_wtf import Form
+=======
+from flask_wtf import FlaskForm
+>>>>>>> upstream/master
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import Required, Length, Email, Regexp, EqualTo
 from wtforms import ValidationError
 from ..models import User
 
 
+<<<<<<< HEAD
 class LoginForm(Form):
+=======
+class LoginForm(FlaskForm):
+>>>>>>> upstream/master
     email = StringField('Email', validators=[Required(), Length(1, 64),
                                              Email()])
     password = PasswordField('Password', validators=[Required()])
@@ -13,7 +21,11 @@ class LoginForm(Form):
     submit = SubmitField('Log In')
 
 
+<<<<<<< HEAD
 class RegistrationForm(Form):
+=======
+class RegistrationForm(FlaskForm):
+>>>>>>> upstream/master
     email = StringField('Email', validators=[Required(), Length(1, 64),
                                            Email()])
     username = StringField('Username', validators=[
@@ -34,7 +46,11 @@ class RegistrationForm(Form):
             raise ValidationError('Username already in use.')
 
 
+<<<<<<< HEAD
 class ChangePasswordForm(Form):
+=======
+class ChangePasswordForm(FlaskForm):
+>>>>>>> upstream/master
     old_password = PasswordField('Old password', validators=[Required()])
     password = PasswordField('New password', validators=[
         Required(), EqualTo('password2', message='Passwords must match')])
@@ -42,13 +58,21 @@ class ChangePasswordForm(Form):
     submit = SubmitField('Update Password')
 
 
+<<<<<<< HEAD
 class PasswordResetRequestForm(Form):
+=======
+class PasswordResetRequestForm(FlaskForm):
+>>>>>>> upstream/master
     email = StringField('Email', validators=[Required(), Length(1, 64),
                                              Email()])
     submit = SubmitField('Reset Password')
 
 
+<<<<<<< HEAD
 class PasswordResetForm(Form):
+=======
+class PasswordResetForm(FlaskForm):
+>>>>>>> upstream/master
     email = StringField('Email', validators=[Required(), Length(1, 64),
                                              Email()])
     password = PasswordField('New Password', validators=[
@@ -61,7 +85,11 @@ class PasswordResetForm(Form):
             raise ValidationError('Unknown email address.')
 
 
+<<<<<<< HEAD
 class ChangeEmailForm(Form):
+=======
+class ChangeEmailForm(FlaskForm):
+>>>>>>> upstream/master
     email = StringField('New Email', validators=[Required(), Length(1, 64),
                                                  Email()])
     password = PasswordField('Password', validators=[Required()])

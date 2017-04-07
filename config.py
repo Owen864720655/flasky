@@ -6,6 +6,10 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
     SSL_DISABLE = False
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
+<<<<<<< HEAD
+=======
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+>>>>>>> upstream/master
     SQLALCHEMY_RECORD_QUERIES = True
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587

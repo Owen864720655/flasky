@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from flask_wtf import Form
+=======
+from flask_wtf import FlaskForm
+>>>>>>> upstream/master
 from wtforms import StringField, TextAreaField, BooleanField, SelectField,\
     SubmitField
 from wtforms.validators import Required, Length, Email, Regexp
@@ -7,19 +11,31 @@ from flask_pagedown.fields import PageDownField
 from ..models import Role, User
 
 
+<<<<<<< HEAD
 class NameForm(Form):
+=======
+class NameForm(FlaskForm):
+>>>>>>> upstream/master
     name = StringField('What is your name?', validators=[Required()])
     submit = SubmitField('Submit')
 
 
+<<<<<<< HEAD
 class EditProfileForm(Form):
+=======
+class EditProfileForm(FlaskForm):
+>>>>>>> upstream/master
     name = StringField('Real name', validators=[Length(0, 64)])
     location = StringField('Location', validators=[Length(0, 64)])
     about_me = TextAreaField('About me')
     submit = SubmitField('Submit')
 
 
+<<<<<<< HEAD
 class EditProfileAdminForm(Form):
+=======
+class EditProfileAdminForm(FlaskForm):
+>>>>>>> upstream/master
     email = StringField('Email', validators=[Required(), Length(1, 64),
                                              Email()])
     username = StringField('Username', validators=[
@@ -50,11 +66,19 @@ class EditProfileAdminForm(Form):
             raise ValidationError('Username already in use.')
 
 
+<<<<<<< HEAD
 class PostForm(Form):
+=======
+class PostForm(FlaskForm):
+>>>>>>> upstream/master
     body = PageDownField("What's on your mind?", validators=[Required()])
     submit = SubmitField('Submit')
 
 
+<<<<<<< HEAD
 class CommentForm(Form):
+=======
+class CommentForm(FlaskForm):
+>>>>>>> upstream/master
     body = StringField('Enter your comment', validators=[Required()])
     submit = SubmitField('Submit')
